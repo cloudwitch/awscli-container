@@ -14,8 +14,8 @@ LABEL Name=awscli-container Version=0.0.1
 WORKDIR /app
 #ADD . /app
 
-# Using pip:
-RUN python3 -m pip install -r awscli &&\
+# install awscli and git:
+RUN pip install awscli &&\
     apk add --update git &&\
     rm -rf /var/cache/apk/*
 ENTRYPOINT [ "aws" ]
