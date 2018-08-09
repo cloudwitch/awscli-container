@@ -15,8 +15,10 @@ WORKDIR /app
 #ADD . /app
 
 # Using pip:
-RUN python3 -m pip install -r awscli
-CMD ["aws"]
+RUN python3 -m pip install -r awscli &&\
+    apk add --update git &&\
+    rm -rf /var/cache/apk/*
+ENTRYPOINT [ "aws" ]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv
