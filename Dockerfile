@@ -16,7 +16,7 @@ WORKDIR /app
 
 # Using pip:
 RUN python3 -m pip install -r awscli
-CMD ["python3", "-m", "aws"]
+CMD ["aws"]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv
