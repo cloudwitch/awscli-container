@@ -6,8 +6,8 @@ before_script:
 build-master:
   stage: build
   script:
-    - docker build -t "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:latest" .
-    - docker push "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:latest"
+    - docker build -t "$DOCKER_REGISTRY_USER/awscli:latest" .
+    - docker push "$DOCKER_REGISTRY_USER/awscli:latest"
   only:
     - master
   tags:
@@ -16,8 +16,8 @@ build-master:
 build:
   stage: build
   script:
-    - docker build --pull -t "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG" .
-    - docker push "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG"
+    - docker build --pull -t "$DOCKER_REGISTRY_USER/awscli:$CI_COMMIT_REF_SLUG" .
+    - docker push "$DOCKER_REGISTRY_USER/awscli:$CI_COMMIT_REF_SLUG"
   except:
     - master
   tags:
