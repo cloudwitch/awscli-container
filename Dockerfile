@@ -15,7 +15,7 @@ WORKDIR /app
 #ADD . /app
 
 # install awscli and git:
-RUN pip install awscli &&\
+RUN pip install awscli cfn-lint &&\
     apk add --update git &&\
     rm -rf /var/cache/apk/*
 ENTRYPOINT [ "aws" ]
