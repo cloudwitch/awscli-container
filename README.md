@@ -4,7 +4,7 @@ This is a Docker container build with awscli installed as well as git with an al
 
 ## Deployment Method
 
-```docker run -it --rm -v /path/to/aws/creds:/root/.aws pheonix991/awscli:latest <arguements>```
+```docker run -it --rm -v -e AWS_DEFAULT_REGION=us-deast-1 /path/to/aws/creds:/root/.aws pheonix991/awscli:latest <arguements>```
 
 ## Authors
 
