@@ -10,5 +10,4 @@ RUN apk add --update openssh-client lsyncd &&\
     rm -rf /var/cache/apk/* &&\
     chown -R abc:abc /config
 
-ENTRYPOINT [ "lsyncd -nodaemon -logfile /app/lsyncd.log" ]
-
+ENTRYPOINT [ "lsyncd -nodaemon " ]
